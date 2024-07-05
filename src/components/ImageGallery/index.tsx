@@ -1,5 +1,7 @@
-import { useEffect, useRef, useState } from 'react';
+import { use, useEffect, useRef, useState } from 'react';
 import { cn } from '@/utilities/tailwindUtils';
+import useSwipe from '@/hooks/useSwipe';
+import useMouseDrag from '@/hooks/useMouseDrag';
 export interface IimageGallery {
   imgUrl: string[];
   duration: number;
@@ -12,6 +14,8 @@ export interface IimageGallery {
 const ImageGallery: React.FC<IimageGallery> = ({ imgUrl, duration, autoSlideShow, fadeInDuration, fadeOutDuration, styling }) => {
   const [currentIndex, setCurrentIndex] = useState<number>(0);
   const [isSlideShowActive, setIsSlideShowActive] = useState<boolean>(autoSlideShow);
+  const {handleTouchStart, handleTouchMove, handleTouchEnd, moveDistance} = useSwipe(50);
+  const {handleMouseDown, handleMouseMove, handleMouseUp} = useMouseDrag(50);
   const timerRef = useRef<any>(null);
   const imageFadeInStyle = cn("opacity-100", fadeInDuration ?? "duration-[3s]");
   const imageFadeOutStyle = cn("opacity-0", fadeOutDuration ?? "duration-[5s]");
@@ -57,8 +61,35 @@ const ImageGallery: React.FC<IimageGallery> = ({ imgUrl, duration, autoSlideShow
     }
   }
 
+  const onTouchStart = (e: any) => {
+    handleTouchStart(e)
+    pauseSlideShow()
+  }
+
+  const onTouchEnd = () => {
+    handleTouchEnd(handleSwipeLeft, handleSwipeRight)()
+    startSlideShow()
+  }
+
+  const onMouseDown = (e: any) => {
+    handleMouseDown(e)
+    pauseSlideShow()
+  }
+
+  const onMouseUp = () => {
+    handleMouseUp(handleSwipeLeft, handleSwipeRight)()
+    startSlideShow()
+  }
+
   return (
-    <div className={cn("relative z-0 flex", styling)}>
+    <div className={cn("relative z-0 flex", styling)}
+        onTouchStart={onTouchStart}
+        onTouchMove={handleTouchMove}
+        onTouchEnd={onTouchEnd}
+        onMouseDown={onMouseDown}
+        onMouseMove={handleMouseMove}
+        onMouseUp={onMouseUp}
+    >
       {imgUrl.map((img, index) => {
         return (
         <img
@@ -66,6 +97,7 @@ const ImageGallery: React.FC<IimageGallery> = ({ imgUrl, duration, autoSlideShow
         className={cn("object-contain h-full w-full absolute", index === currentIndex ? imageFadeInStyle : imageFadeOutStyle)}
         src={img}
         alt="image"
+        draggable={false}
         />)
       })}
     </div>

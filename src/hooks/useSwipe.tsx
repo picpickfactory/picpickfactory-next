@@ -1,10 +1,9 @@
-import { on } from "events"
 import { useState } from "react"
 
-export default function useSwipe(minDistance: number = 50, onSwipeLeft: () => void, onSwipeRight: () => void){
+export default function useSwipe(minDistance: number = 50){
   const [touchStart, setTouchStart] = useState(NaN)
   const [touchEnd, setTouchEnd] = useState(NaN)
-  const [moveDistance, setMoveDistance] = useState(0)
+  const [swipeDistance, setSwipeDistance] = useState(0)
 
   const handleTouchStart = (e: any) => {
     setTouchEnd(NaN)
@@ -13,14 +12,14 @@ export default function useSwipe(minDistance: number = 50, onSwipeLeft: () => vo
 
   const handleTouchMove = (e: any) => {
     if (!Number.isNaN(touchStart)) {
-      setMoveDistance(e.targetTouches[0].clientX - touchStart)
+      setSwipeDistance(e.targetTouches[0].clientX - touchStart)
     }
     setTouchEnd(e.targetTouches[0].clientX)
   }
 
-  const handleTouchEnd = () => {
+  const handleTouchEnd = (onSwipeLeft: () => void, onSwipeRight: () => void) => () => {
     if (Number.isNaN(touchStart) || Number.isNaN(touchEnd)) return
-    if (Math.abs(moveDistance) > minDistance) {
+    if (Math.abs(swipeDistance) > minDistance) {
       if (touchEnd > touchStart) {
         onSwipeRight()
       } else {
@@ -33,6 +32,6 @@ export default function useSwipe(minDistance: number = 50, onSwipeLeft: () => vo
     handleTouchStart,
     handleTouchMove,
     handleTouchEnd,
-    moveDistance
+    moveDistance: swipeDistance
   }
 }
