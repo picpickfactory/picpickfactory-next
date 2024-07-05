@@ -3,23 +3,23 @@ import { useState } from "react"
 export default function useMouseDrag(minDistance: number = 50) {
     const [startX, setStartX] = useState(NaN);
     const [endX, setEndX] = useState(NaN);
-    const [mouseMoveDistance, setMouseMoveDistance] = useState(0);
+    const [dragDistance, setDragDistance] = useState(0);
 
-    const handleMouseDown = (e: React.MouseEvent) => {
+    const handleDragStart = (e: React.MouseEvent) => {
         setEndX(NaN);
         setStartX(e.clientX);
       };
     
-      const handleMouseMove = (e: React.MouseEvent) => {
+      const handleDragMove = (e: React.MouseEvent) => {
         if (!Number.isNaN(startX)) {
-            setMouseMoveDistance(e.clientX - startX);
+            setDragDistance(e.clientX - startX);
         }
         setEndX(e.clientX);
       };
     
-      const handleMouseUp = (onSwipeLeft: () => void, onSwipeRight: () => void) => () => {
+      const handleDragEnd = (onSwipeLeft: () => void, onSwipeRight: () => void) => () => {
         if (Number.isNaN(startX) || Number.isNaN(endX)) return;
-        if (Math.abs(mouseMoveDistance) > minDistance) {
+        if (Math.abs(dragDistance) > minDistance) {
           if (endX > startX) {
             onSwipeRight();
           } else {
@@ -29,9 +29,9 @@ export default function useMouseDrag(minDistance: number = 50) {
       };
 
       return {
-        handleMouseDown,
-        handleMouseMove,
-        handleMouseUp,
-        moveDistance: mouseMoveDistance
+        handleDragStart,
+        handleDragMove,
+        handleDragEnd,
+        moveDistance: dragDistance
       }
 }

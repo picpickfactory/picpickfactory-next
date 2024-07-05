@@ -2,6 +2,7 @@ import { use, useEffect, useRef, useState } from 'react';
 import { cn } from '@/utilities/tailwindUtils';
 import useSwipe from '@/hooks/useSwipe';
 import useMouseDrag from '@/hooks/useMouseDrag';
+import { Box, Modal, Typography } from '@mui/material';
 export interface IimageGallery {
   imgUrl: string[];
   duration: number;
@@ -9,27 +10,33 @@ export interface IimageGallery {
   fadeInDuration?: string;
   fadeOutDuration?: string;
   styling?: string[];
+  allowSwipe?: boolean;
+  allowDrag?: boolean;
+  onClick?: () => void;
 }
 
-const ImageGallery: React.FC<IimageGallery> = ({ imgUrl, duration, autoSlideShow, fadeInDuration, fadeOutDuration, styling }) => {
+const ImageGallery: React.FC<IimageGallery> = ({ imgUrl, duration, autoSlideShow, fadeInDuration, fadeOutDuration, styling, allowDrag = true, allowSwipe = true, onClick }) => {
   const [currentIndex, setCurrentIndex] = useState<number>(0);
   const [isSlideShowActive, setIsSlideShowActive] = useState<boolean>(autoSlideShow);
-  const {handleTouchStart, handleTouchMove, handleTouchEnd, moveDistance} = useSwipe(50);
-  const {handleMouseDown, handleMouseMove, handleMouseUp} = useMouseDrag(50);
-  const timerRef = useRef<any>(null);
+  const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
+  const [isHolding, setIsHolding] = useState(false);
+  const {handleTouchStart, handleTouchMove, handleTouchEnd} = useSwipe(50);
+  const {handleDragStart, handleDragMove, handleDragEnd} = useMouseDrag(50);
+  const slideShowTimeRef = useRef<any>(null);
+  const mouseClickTimeRef = useRef<any>(null);
   const imageFadeInStyle = cn("opacity-100", fadeInDuration ?? "duration-[3s]");
   const imageFadeOutStyle = cn("opacity-0", fadeOutDuration ?? "duration-[5s]");
 
   useEffect(() => {
     if (isSlideShowActive) {
-      timerRef.current = setTimeout(() => {
+      slideShowTimeRef.current = setTimeout(() => {
         setCurrentIndex((prevIndex) => (prevIndex >= imgUrl.length - 1 ? 0 : prevIndex + 1));
       }, duration * 1000);
     }
 
     return () => {
-      if (timerRef.current) {
-        clearTimeout(timerRef.current);
+      if (slideShowTimeRef.current) {
+        clearTimeout(slideShowTimeRef.current);
       }
     };
   }, [isSlideShowActive, currentIndex, duration, imgUrl.length]);
@@ -40,8 +47,8 @@ const ImageGallery: React.FC<IimageGallery> = ({ imgUrl, duration, autoSlideShow
 
   const pauseSlideShow = () => {
     setIsSlideShowActive(false);
-    if (timerRef.current) {
-      clearTimeout(timerRef.current);
+    if (slideShowTimeRef.current) {
+      clearTimeout(slideShowTimeRef.current);
     }
   };
 
@@ -62,45 +69,84 @@ const ImageGallery: React.FC<IimageGallery> = ({ imgUrl, duration, autoSlideShow
   }
 
   const onTouchStart = (e: any) => {
+    if (!allowSwipe) return
     handleTouchStart(e)
     pauseSlideShow()
   }
 
   const onTouchEnd = () => {
+    if (!allowSwipe) return
     handleTouchEnd(handleSwipeLeft, handleSwipeRight)()
     startSlideShow()
   }
 
-  const onMouseDown = (e: any) => {
-    handleMouseDown(e)
+  const onDragStart = (e: any) => {
+    if (!allowDrag) return
+    handleDragStart(e)
     pauseSlideShow()
   }
 
-  const onMouseUp = () => {
-    handleMouseUp(handleSwipeLeft, handleSwipeRight)()
+  const onDragEnd = () => {
+    if (!allowDrag) return
+    handleDragEnd(handleSwipeLeft, handleSwipeRight)()
     startSlideShow()
   }
 
+  const handleMouseDown = (e: any) => {
+    onDragStart(e);
+    setIsHolding(false);
+    mouseClickTimeRef.current = window.setTimeout(() => {
+      setIsHolding(true);
+    }, 200);
+  };
+
+  const handleMouseUp = () => {
+    onDragEnd();
+    if (mouseClickTimeRef.current) {
+      clearTimeout(mouseClickTimeRef.current);
+    }
+  };
+
+  const handleClick = () => {
+    if (!isHolding) {
+      setIsModalOpen(true);
+    }
+  };
+
   return (
-    <div className={cn("relative z-0 flex", styling)}
+    <>
+      <Modal
+        open={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+      >
+        <Box>
+          <Typography id="modal-modal-title" variant="h6" component="h2">
+            Text in a modal
+          </Typography>
+        </Box>
+      </Modal>
+      <Box className={cn("relative z-0 flex", styling)}
         onTouchStart={onTouchStart}
         onTouchMove={handleTouchMove}
         onTouchEnd={onTouchEnd}
-        onMouseDown={onMouseDown}
-        onMouseMove={handleMouseMove}
-        onMouseUp={onMouseUp}
-    >
-      {imgUrl.map((img, index) => {
-        return (
-        <img
-        key={index}
-        className={cn("object-contain h-full w-full absolute", index === currentIndex ? imageFadeInStyle : imageFadeOutStyle)}
-        src={img}
-        alt="image"
-        draggable={false}
-        />)
-      })}
-    </div>
+        onMouseDown={handleMouseDown}
+        onMouseMove={handleDragMove}
+        onMouseUp={handleMouseUp}
+        onClick={onClick ?? handleClick}
+      >
+        {imgUrl.map((img, index) => {
+          return (
+            <img
+              key={index}
+              className={cn("object-contain h-full w-full absolute", index === currentIndex ? imageFadeInStyle : imageFadeOutStyle)}
+              src={img}
+              alt="image"
+              draggable={false}
+            />)
+        })}
+      </Box>
+    </>
+
   );
 };
 
