@@ -109,21 +109,23 @@ const ImageGallery: React.FC<IimageGallery> = ({ imgUrl, duration, autoSlideShow
 
   const handleClick = () => {
     if (!isHolding) {
+      setIsSlideShowActive(false);
       setIsModalOpen(true);
     }
   };
+
+  const handleOnModalClose = () => {
+    setIsModalOpen(false);
+    setIsSlideShowActive(true);
+  }
 
   return (
     <>
       <Modal
         open={isModalOpen}
-        onClose={() => setIsModalOpen(false)}
+        onClose={handleOnModalClose}
       >
-        <Box>
-          <Typography id="modal-modal-title" variant="h6" component="h2">
-            Text in a modal
-          </Typography>
-        </Box>
+        <img className="object-contain m-auto max-h-[90%] max-w-[90%] outline-none" src={imgUrl[currentIndex]}/>
       </Modal>
       <Box className={cn("relative z-0 flex", styling)}
         onTouchStart={onTouchStart}
