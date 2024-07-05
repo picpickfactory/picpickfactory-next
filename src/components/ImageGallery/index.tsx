@@ -3,13 +3,16 @@ import { cn } from '@/utilities/tailwindUtils';
 export interface IimageGallery {
   imgUrl: string[];
   duration: number;
-  transitionDuration?: string;
+  fadeInDuration?: number;
+  fadeOutDuration?: number;
   isSlideShowActive: boolean;
   styling?: string[];
 }
 
-const ImageGallery: React.FC<IimageGallery> = ({ imgUrl, duration, transitionDuration, isSlideShowActive, styling }) => {
+const ImageGallery: React.FC<IimageGallery> = ({ imgUrl, duration, fadeInDuration, fadeOutDuration, isSlideShowActive, styling }) => {
   const [currentIndex, setCurrentIndex] = useState<number>(0);
+  const imageFadeInStyle = cn("opacity-100", fadeInDuration ? `duration-[${fadeInDuration}s]` : "duration-[1s]");
+  const imageFadeOutStyle = cn("opacity-0", fadeOutDuration ? `duration-[${fadeOutDuration}s]` : "duration-[1s]");
 
   useEffect(() => {
     if (isSlideShowActive) {
@@ -30,7 +33,7 @@ const ImageGallery: React.FC<IimageGallery> = ({ imgUrl, duration, transitionDur
         return (
         <img
         key={index}
-        className={cn("object-contain h-full w-full absolute", transitionDuration ? transitionDuration : "duration-[5s]", index === currentIndex ? "opacity-100" : "opacity-0")}
+        className={cn("object-contain h-full w-full absolute", index === currentIndex ? imageFadeInStyle : imageFadeOutStyle)}
         src={img}
         alt="image"
         />)

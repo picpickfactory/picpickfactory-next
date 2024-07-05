@@ -18,6 +18,6 @@ const bbk = [ "https://firebasestorage.googleapis.com/v0/b/pic-pick-factory.apps
 
 export default function Page({ params }: { params: { category: string, subcategory: string } }) {
     return <>
-    <ImageGallery imgUrl={bbk} duration={5} transitionDuration="duration-[3s]" isSlideShowActive={true} styling={["h-[50vh]", "w-full"]}/>
+    <ImageGallery imgUrl={bbk} duration={5} fadeInDuration={5} fadeOutDuration={5} isSlideShowActive={true} styling={["h-[50vh]", "w-full"]}/>
     </>
 }
