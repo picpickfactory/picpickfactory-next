@@ -1,3 +1,8 @@
+'use client'
+
+import ImageGallery from "@/components/ImageGallery"
+import { cn } from "@/utilities/tailwindUtils"
+
 const bbk = [ "https://firebasestorage.googleapis.com/v0/b/pic-pick-factory.appspot.com/o/BKKCIRCUS01.jpg?alt=media&token=1bca2fbf-2902-4761-945f-167dc12200cd",
     "https://firebasestorage.googleapis.com/v0/b/pic-pick-factory.appspot.com/o/BKKCIRCUS02.jpg?alt=media&token=4a06006c-aee9-4218-99e4-0ce38a6e3a42",
     "https://firebasestorage.googleapis.com/v0/b/pic-pick-factory.appspot.com/o/BKKCIRCUSLONGWAY.jpg?alt=media&token=d68d460f-9480-43cc-85c6-11c44afcb447",
@@ -12,5 +17,7 @@ const bbk = [ "https://firebasestorage.googleapis.com/v0/b/pic-pick-factory.apps
 
 
 export default function Page({ params }: { params: { category: string, subcategory: string } }) {
-    return <h1>{params.category}-{params.subcategory}</h1>
+    return <>
+    <ImageGallery imgUrl={bbk} duration={5} transitionDuration="duration-[3s]" isSlideShowActive={true} styling={["h-[50vh]", "w-full"]}/>
+    </>
 }
