@@ -14,15 +14,15 @@ import Collapse from '@mui/material/Collapse';
 
 
 const personal = [
-    'testper1',
-    'testper2',
-    'testper3'
+    {title : 'testper1'},
+    {title : 'testper2'},
+    {title : 'testper3'},
 ]
 
 const commissioned = [
-    'testcom1',
-    'testcom2',
-    'testcom3'
+    {title : 'testcom1'},
+    {title : 'testcom2'},
+    {title : 'testcom3'},
 ]
 
 
@@ -76,8 +76,8 @@ export default function HeaderSection() {
                 <List component="div" disablePadding>
 
                 {personal.map((item) => (
-                    <ListItemButton sx={{ pl: 4 }}>
-                        <ListItemText primary= {item} />
+                    <ListItemButton sx={{ pl: 4 }} key={item.title} href={`/personal/${item.title}`}>
+                        <ListItemText primary= {item.title} />
                     </ListItemButton>
                 ))}
 
@@ -92,18 +92,18 @@ export default function HeaderSection() {
                 <List component="div" disablePadding>
                 
                 {commissioned.map((item) => (
-                    <ListItemButton sx={{ pl: 4 }}>
-                        <ListItemText primary= {item} />
+                    <ListItemButton sx={{ pl: 4 }} key={item.title} href={`/commissioned/${item.title}`}>
+                        <ListItemText primary= {item.title} />
                     </ListItemButton>
                 ))}
 
                 </List>
             </Collapse>
 
-        <ListItemButton>
+        <ListItemButton href={`/aboutus`}>
             <ListItemText primary="About us" />
         </ListItemButton>
-        <ListItemButton>
+        <ListItemButton href={`/contact`}>
             <ListItemText primary="Contact" />
         </ListItemButton>
         </List>
