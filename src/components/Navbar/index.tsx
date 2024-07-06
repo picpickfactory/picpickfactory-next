@@ -58,56 +58,47 @@ export default function HeaderSection() {
         };
 
     const list = (
-        <Box
-        role="presentation"
-        >
-        <List>
-        <List
-            sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}
-            component="nav"
-            aria-labelledby="nested-list-subheader"
-            >
+        <Box role="presentation">
+          <List sx={{bgcolor: 'background.paper' }}>
+            <ListItemButton onClick={handleClickPersonal}>
+                <ListItemText primary="Personal" />
+                    {openPersonal ? <ExpandLess /> : <ExpandMore />}
+            </ListItemButton>
+                <Collapse in={openPersonal} timeout="auto" unmountOnExit>
+                    <List component="div" disablePadding>
 
-        <ListItemButton onClick={handleClickPersonal}>
-            <ListItemText primary="Personal" />
-                {openPersonal ? <ExpandLess /> : <ExpandMore />}
-        </ListItemButton>
-            <Collapse in={openPersonal} timeout="auto" unmountOnExit>
-                <List component="div" disablePadding>
+                    {personal.map((item) => (
+                        <ListItemButton sx={{ pl: 4 }} key={item.title} href={`/personal/${item.title}`}>
+                            <ListItemText primary= {item.title} />
+                        </ListItemButton>
+                    ))}
 
-                {personal.map((item) => (
-                    <ListItemButton sx={{ pl: 4 }} key={item.title} href={`/personal/${item.title}`}>
-                        <ListItemText primary= {item.title} />
-                    </ListItemButton>
-                ))}
+                    </List>
+                </Collapse>
 
-                </List>
-            </Collapse>
+            <ListItemButton onClick={handleClickCommissioned}>
+                <ListItemText primary="Commissioned" />
+                    {openCommissioned ? <ExpandLess /> : <ExpandMore />}
+            </ListItemButton>
+                <Collapse in={openCommissioned} timeout="auto" unmountOnExit>
+                    <List component="div" disablePadding>
+                    
+                    {commissioned.map((item) => (
+                        <ListItemButton sx={{ pl: 4 }} key={item.title} href={`/commissioned/${item.title}`}>
+                            <ListItemText primary= {item.title} />
+                        </ListItemButton>
+                    ))}
 
-        <ListItemButton onClick={handleClickCommissioned}>
-            <ListItemText primary="Commissioned" />
-                {openCommissioned ? <ExpandLess /> : <ExpandMore />}
-        </ListItemButton>
-            <Collapse in={openCommissioned} timeout="auto" unmountOnExit>
-                <List component="div" disablePadding>
-                
-                {commissioned.map((item) => (
-                    <ListItemButton sx={{ pl: 4 }} key={item.title} href={`/commissioned/${item.title}`}>
-                        <ListItemText primary= {item.title} />
-                    </ListItemButton>
-                ))}
+                    </List>
+                </Collapse>
 
-                </List>
-            </Collapse>
-
-        <ListItemButton href={`/aboutus`}>
-            <ListItemText primary="About us" />
-        </ListItemButton>
-        <ListItemButton href={`/contact`}>
-            <ListItemText primary="Contact" />
-        </ListItemButton>
-        </List>
-        </List>
+            <ListItemButton href={`/aboutus`}>
+                <ListItemText primary="About us" />
+            </ListItemButton>
+            <ListItemButton href={`/contact`}>
+                <ListItemText primary="Contact" />
+            </ListItemButton>
+          </List>
         </Box>
     );
 
@@ -125,18 +116,18 @@ export default function HeaderSection() {
         
       <Box sx={{ flexShrink: 0 }}>
         <IconButton size='sm'>
-          <MenuIcon 
-          onClick={toggleDrawer(true)} />
-          <SwipeableDrawer
-            anchor='top'
-            open={state}
-            onClose={toggleDrawer(false)}
-            onOpen={toggleDrawer(true)}
-          >
-            {list}
-          </SwipeableDrawer>
+          <MenuIcon onClick={toggleDrawer(true)} />
+            <SwipeableDrawer
+              anchor='top'
+              open={state}
+              onClose={toggleDrawer(false)}
+              onOpen={toggleDrawer(true)}
+            >
+              {list}
+            </SwipeableDrawer>
         </IconButton>
       </Box>
+      
       <Box
         sx={{
           flexGrow: 1,
