@@ -125,7 +125,7 @@ const ImageGallery: React.FC<IimageGallery> = ({ imgUrl, duration, autoSlideShow
         open={isModalOpen}
         onClose={handleOnModalClose}
       >
-        <img className="object-contain m-auto max-h-[90%] max-w-[90%] outline-none" src={imgUrl[currentIndex]}/>
+        <img className="object-contain m-auto max-h-[90%] max-w-[90%] outline-none" src={imgUrl[currentIndex]} alt="image"/>
       </Modal>
       <Box className={cn("relative z-0 flex", styling)}
         onTouchStart={onTouchStart}
