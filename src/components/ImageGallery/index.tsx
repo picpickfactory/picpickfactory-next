@@ -132,10 +132,11 @@ const ImageGallery: React.FC<IimageGallery> = ({ images, duration, autoSlideShow
   return (
     <>
       <Modal
+        className='flex justify-center items-center'
         open={isModalOpen}
         onClose={handleOnModalClose}
       >
-        <img className="object-contain m-auto max-h-[90%] max-w-[90%] outline-none" src={images[currentIndex].url} alt="image" />
+        <img className="object-contain max-h-[90%] max-w-[90%] outline-none" src={images[currentIndex].url} alt="image" />
       </Modal>
       <Box className={cn("relative z-0 flex", imageBoxStyling)}
         onTouchStart={onTouchStart}
