@@ -2,7 +2,7 @@
 
 import ImageGallery from "@/components/ImageGallery"
 import { cn } from "@/utils/tailwind"
-import { Typography } from "@mui/material"
+import { Box, Typography } from "@mui/material"
 
 const bbk = ["https://firebasestorage.googleapis.com/v0/b/pic-pick-factory.appspot.com/o/BKKCIRCUS01.jpg?alt=media&token=1bca2fbf-2902-4761-945f-167dc12200cd",
   "https://firebasestorage.googleapis.com/v0/b/pic-pick-factory.appspot.com/o/BKKCIRCUS02.jpg?alt=media&token=4a06006c-aee9-4218-99e4-0ce38a6e3a42",
@@ -20,10 +20,9 @@ export default function Page({ params }: { params: { category: string, subcatego
   const title = "BANGKOK CIRCUS 2024"
   var description = "BKK Circus is a group of young artists who are passionate about circus arts. They have been performing in various events and festivals in Thailand and abroad. They are known for their unique style and creativity. Their performances are a mix of acrobatics, juggling, and other circus acts. They are always looking for new ways to entertain and inspire their audience."
   const titleStyle = cn("sm:text-5xl mx-[5%]", description ? "text-3xl mt-[60px] text-center" : "text-base mt-[50px] text-right")
-
-  return <>
+  return <Box className="mt-[20px]">
     <ImageGallery imgUrl={bbk} duration={5} autoSlideShow={true} fadeInDuration={'duration-[3s]'} fadeOutDuration={'duration-[5s]'} styling={["h-[45vh]", "w-full"]} />
     <Typography className={titleStyle}>{title}</Typography>
     {description && <Typography className="text-center ml-[10%] mr-[5%] mt-[20px]">{description}</Typography>}
-  </>
+  </Box>
 }

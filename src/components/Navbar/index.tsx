@@ -137,10 +137,10 @@ export default function HeaderSection() {
           justifyContent: 'center',
         }}
       >
-        <Typography component='h1' fontWeight='xl'>
+        <Typography className="text-3xl text-center">
           PICPICKFACTORY
         </Typography>
-        <Typography component='h3' fontWeight='sm'>
+        <Typography className="text-center">
           BY KASIDIT SINGHARES
         </Typography>
       </Box>
