@@ -107,14 +107,13 @@ export default function HeaderSection() {
     <Box
       sx={{
         display: 'flex',
-        alignItems: 'center',
         width: '95%',
         px: 1.5,
         py: 2,
       }}
     >
         
-      <Box sx={{ flexShrink: 0 }}>
+      <Box className="mt-[5px]">
         <IconButton>
           <MenuIcon onClick={toggleDrawer(true)} />
             <SwipeableDrawer
