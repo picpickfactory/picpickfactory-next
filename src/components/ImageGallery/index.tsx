@@ -1,5 +1,5 @@
 import { use, useEffect, useRef, useState } from 'react';
-import { cn } from '@/utilities/tailwindUtils';
+import { cn } from '@/utils/tailwind';
 import useSwipe from '@/hooks/useSwipe';
 import useMouseDrag from '@/hooks/useMouseDrag';
 import { Box, Modal, Typography } from '@mui/material';
