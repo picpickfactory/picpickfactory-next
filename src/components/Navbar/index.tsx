@@ -107,7 +107,7 @@ export default function HeaderSection() {
     <Box
       sx={{
         display: 'flex',
-        width: '95%',
+        width: '100%',
         px: 1.5,
         py: 2,
       }}
