@@ -24,8 +24,8 @@ export default function Home() {
   }
 
   return (
-    <div>
-      <ImageGallery images={bbk} duration={5} autoSlideShow={true} fadeInDuration={'duration-[3s]'} fadeOutDuration={'duration-[5s]'} imageBoxStyling={["h-[45vh]", "w-[85%]", "ml-[10px]", "mt-[120px]"]} imageStyling={["object-cover", "h-full", "w-full"]} titleBoxStyling={["mr-[12%]"]} titleTextStyling={["text-2xl mt-4"]} onClick={onClick}/>
+    <div className="ml-[10px]">
+      <ImageGallery images={bbk} duration={5} autoSlideShow={true} fadeInDuration={'duration-[3s]'} fadeOutDuration={'duration-[5s]'} imageBoxStyling={["h-[45vh]", "w-[85%]", "mr-[15%]", "mt-[120px]"]} imageStyling={["object-cover", "h-full", "w-full"]} titleBoxStyling={["mr-[18%]"]} titleTextStyling={["text-2xl mt-4"]} onClick={onClick}/>
     </div>
   );
 }
