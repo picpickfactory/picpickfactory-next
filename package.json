@@ -12,7 +12,10 @@
     "@emotion/cache": "^11.11.0",
     "@emotion/react": "^11.11.4",
     "@emotion/styled": "^11.11.5",
-    "@mui/material": "^5.15.21",
+    "@mui/icons-material": "^5.16.0",
+    "@mui/joy": "^5.0.0-beta.47",
+    "@mui/material": "^5.16.0",
+    "@mui/styled-engine-sc": "^6.0.0-alpha.18",
     "@mui/material-nextjs": "^5.15.11",
     "axios": "^1.7.2",
     "clsx": "^2.1.1",
@@ -20,6 +23,7 @@
     "query-string": "^9.0.0",
     "react": "^18",
     "react-dom": "^18",
+    "styled-components": "^6.1.11"
     "tailwind-merge": "^2.3.0"
   },
   "devDependencies": {
