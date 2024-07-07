@@ -16,7 +16,7 @@ export interface IimageGallery {
   titleTextStyling?: string[];
   allowSwipe?: boolean;
   allowDrag?: boolean;
-  onClick?: () => void;
+  onClick?: (image: Image) => void;
 }
 
 const ImageGallery: React.FC<IimageGallery> = ({ images, duration, autoSlideShow, fadeInDuration, fadeOutDuration, imageBoxStyling, imageStyling, titleBoxStyling, titleTextStyling, allowDrag = true, allowSwipe = true, onClick }) => {
@@ -114,7 +114,13 @@ const ImageGallery: React.FC<IimageGallery> = ({ images, duration, autoSlideShow
   const handleClick = () => {
     if (!isHolding) {
       setIsSlideShowActive(false);
-      setIsModalOpen(true);
+      const currentImage = images.find((image) => images.indexOf(image) === currentIndex);
+      if (currentImage && onClick) {
+        onClick(currentImage);
+      } else {
+        setIsModalOpen(true);
+      }
+
     }
   };
 
@@ -138,7 +144,7 @@ const ImageGallery: React.FC<IimageGallery> = ({ images, duration, autoSlideShow
         onMouseDown={handleMouseDown}
         onMouseMove={handleDragMove}
         onMouseUp={handleMouseUp}
-        onClick={onClick ?? handleClick}
+        onClick={handleClick}
       >
         {images.map((img, index) => {
           return (
