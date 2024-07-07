@@ -144,33 +144,30 @@ const ImageGallery: React.FC<IimageGallery> = ({ images, duration, autoSlideShow
       >
         {images.map((img, index) => {
           return (
-            <>
-              <img
-                key={index}
-                className={cn("absolute", imageStyling)}
-                src={img.url}
-                alt="image"
-                draggable={false}
-                id={index === currentIndex ? 'fade-in' : 'fade-out'}
-                onClick={handleClick(index)}
-              />
-            </>
+            <img
+              key={index}
+              className={cn("absolute", imageStyling)}
+              src={img.url}
+              alt="image"
+              draggable={false}
+              id={index === currentIndex ? 'fade-in' : 'fade-out'}
+              onClick={handleClick(index)}
+            />
           )
         })}
       </Box>
       <Box className={cn("relative z-0 flex", titleBoxStyling)}>
         {images.map((img, index) => {
           return (
-            <>
+            <Box key={index}>
               {img.title &&
                 <Typography
-                  key={index}
                   className={cn("absolute text-right", titleTextStyling)}
                   id={index === currentIndex ? 'fade-in' : 'fade-out'}
                 >
                   {img.title}
                 </Typography>}
-            </>
+            </Box>
           )
         })}
       </Box>
