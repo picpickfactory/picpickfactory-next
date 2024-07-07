@@ -1,7 +1,7 @@
 'use client';
 import * as React from 'react';
-import { Box, IconButton } from '@mui/joy';
-import Typography from '@mui/joy/Typography';
+
+import { Typography , Box, IconButton  } from "@mui/material"
 import MenuIcon from '@mui/icons-material/Menu';
 
 import SwipeableDrawer from '@mui/material/SwipeableDrawer';
@@ -115,7 +115,7 @@ export default function HeaderSection() {
     >
         
       <Box sx={{ flexShrink: 0 }}>
-        <IconButton size='sm'>
+        <IconButton>
           <MenuIcon onClick={toggleDrawer(true)} />
             <SwipeableDrawer
               anchor='top'

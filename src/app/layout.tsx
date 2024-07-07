@@ -6,6 +6,8 @@ import theme from "@/theme";
 import { CssBaseline } from "@mui/material";
 import { AppRouterCacheProvider } from "@mui/material-nextjs/v14-appRouter";
 
+import Navbar from '../components/Navbar'
+
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -24,6 +26,7 @@ export default function RootLayout({
         <AppRouterCacheProvider options={{ enableCssLayer: true }}>
           <ThemeProvider theme={theme}>
             <CssBaseline />
+            <Navbar></Navbar>
             {children}
           </ThemeProvider>
         </AppRouterCacheProvider>
