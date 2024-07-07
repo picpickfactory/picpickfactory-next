@@ -1,7 +1,7 @@
 'use client';
 import * as React from 'react';
 
-import { Typography , Box, IconButton  } from "@mui/material"
+import { Typography , Box, IconButton, Link  } from "@mui/material"
 import MenuIcon from '@mui/icons-material/Menu';
 
 import SwipeableDrawer from '@mui/material/SwipeableDrawer';
@@ -126,23 +126,24 @@ export default function HeaderSection() {
             </SwipeableDrawer>
         </IconButton>
       </Box>
-      
-      <Box
-        sx={{
-          flexGrow: 1,
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-          justifyContent: 'center',
-        }}
-      >
-        <Typography className="text-3xl text-center">
-          PICPICKFACTORY
-        </Typography>
-        <Typography className="text-center">
-          BY KASIDIT SINGHARES
-        </Typography>
-      </Box>
+        <Box
+            sx={{
+            flexGrow: 1,
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            justifyContent: 'center',
+            }}
+        >
+            <Link href="/">
+            <Typography className="text-3xl text-center">
+            PICPICKFACTORY
+            </Typography>
+            <Typography className="text-center">
+            BY KASIDIT SINGHARES
+            </Typography>
+            </Link>
+        </Box>
     </Box>
   );
 }
