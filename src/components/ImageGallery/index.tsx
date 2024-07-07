@@ -4,12 +4,11 @@ import useSwipe from '@/hooks/useSwipe';
 import useMouseDrag from '@/hooks/useMouseDrag';
 import { Box, Modal, Typography } from '@mui/material';
 import { Image } from '@/types/image';
+import '../../styles/imageGallery.css';
 export interface IimageGallery {
   images: Image[];
   duration: number;
   autoSlideShow: boolean;
-  fadeInDuration?: string;
-  fadeOutDuration?: string;
   imageBoxStyling?: string[];
   imageStyling?: string[];
   titleBoxStyling?: string[];
@@ -19,22 +18,24 @@ export interface IimageGallery {
   onClick?: (image: Image) => void;
 }
 
-const ImageGallery: React.FC<IimageGallery> = ({ images, duration, autoSlideShow, fadeInDuration, fadeOutDuration, imageBoxStyling, imageStyling, titleBoxStyling, titleTextStyling, allowDrag = true, allowSwipe = true, onClick }) => {
+const ImageGallery: React.FC<IimageGallery> = ({ images, duration, autoSlideShow, imageBoxStyling, imageStyling, titleBoxStyling, titleTextStyling, allowDrag = true, allowSwipe = true, onClick }) => {
   const [currentIndex, setCurrentIndex] = useState<number>(0);
+  const [prevIndex, setPrevIndex] = useState<number>(0);
   const [isSlideShowActive, setIsSlideShowActive] = useState<boolean>(autoSlideShow);
-  const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
+  const [showImage, setShowImage] = useState<Image | null>(null);
   const [isHolding, setIsHolding] = useState(false);
   const { handleTouchStart, handleTouchMove, handleTouchEnd } = useSwipe(50);
   const { handleDragStart, handleDragMove, handleDragEnd } = useMouseDrag(50);
   const slideShowTimeRef = useRef<any>(null);
   const mouseClickTimeRef = useRef<any>(null);
-  const fadeInStyle = cn("opacity-100", fadeInDuration ?? "duration-[3s]");
-  const fadeOutStyle = cn("opacity-0", fadeOutDuration ?? "duration-[5s]");
+  const fadeInStyle = cn("opacity-100 z-20");
+  const fadeOutStyle = cn("opacity-0 z-10");
 
   useEffect(() => {
     if (isSlideShowActive) {
       slideShowTimeRef.current = setTimeout(() => {
-        setCurrentIndex((prevIndex) => (prevIndex >= images.length - 1 ? 0 : prevIndex + 1));
+        setPrevIndex(currentIndex);
+        setCurrentIndex((index) => (index >= images.length - 1 ? 0 : index + 1));
       }, duration * 1000);
     }
 
@@ -57,6 +58,7 @@ const ImageGallery: React.FC<IimageGallery> = ({ images, duration, autoSlideShow
   };
 
   const handleSwipeLeft = () => {
+    setPrevIndex(currentIndex)
     if (currentIndex >= images.length - 1) {
       setCurrentIndex(0)
     } else {
@@ -65,6 +67,7 @@ const ImageGallery: React.FC<IimageGallery> = ({ images, duration, autoSlideShow
   }
 
   const handleSwipeRight = () => {
+    setPrevIndex(currentIndex)
     if (currentIndex <= 0) {
       setCurrentIndex(images.length - 1)
     } else {
@@ -111,21 +114,14 @@ const ImageGallery: React.FC<IimageGallery> = ({ images, duration, autoSlideShow
     }
   };
 
-  const handleClick = () => {
-    if (!isHolding) {
-      setIsSlideShowActive(false);
-      const currentImage = images.find((image) => images.indexOf(image) === currentIndex);
-      if (currentImage && onClick) {
-        onClick(currentImage);
-      } else {
-        setIsModalOpen(true);
-      }
-
-    }
+  const handleClick = (index: number) => () => {
+    if (isHolding || (index != currentIndex && index != prevIndex)) return;
+    setIsSlideShowActive(false);
+    onClick ? onClick(images[index]) : setShowImage(images[index]);
   };
 
   const handleOnModalClose = () => {
-    setIsModalOpen(false);
+    setShowImage(null);
     setIsSlideShowActive(true);
   }
 
@@ -133,10 +129,10 @@ const ImageGallery: React.FC<IimageGallery> = ({ images, duration, autoSlideShow
     <>
       <Modal
         className='flex justify-center items-center'
-        open={isModalOpen}
+        open={showImage !== null}
         onClose={handleOnModalClose}
       >
-        <img className="object-contain max-h-[90%] max-w-[90%] outline-none" src={images[currentIndex].url} alt="image" />
+        <img className="object-contain max-h-[90%] max-w-[90%] outline-none" src={showImage?.url} alt="image" />
       </Modal>
       <Box className={cn("relative z-0 flex", imageBoxStyling)}
         onTouchStart={onTouchStart}
@@ -145,19 +141,19 @@ const ImageGallery: React.FC<IimageGallery> = ({ images, duration, autoSlideShow
         onMouseDown={handleMouseDown}
         onMouseMove={handleDragMove}
         onMouseUp={handleMouseUp}
-        onClick={handleClick}
       >
         {images.map((img, index) => {
           return (
             <>
               <img
                 key={index}
-                className={cn("absolute", imageStyling, index === currentIndex ? fadeInStyle : fadeOutStyle)}
+                className={cn("absolute", imageStyling)}
                 src={img.url}
                 alt="image"
                 draggable={false}
+                id={index === currentIndex ? 'fade-in' : 'fade-out'}
+                onClick={handleClick(index)}
               />
-
             </>
           )
         })}
@@ -166,7 +162,14 @@ const ImageGallery: React.FC<IimageGallery> = ({ images, duration, autoSlideShow
         {images.map((img, index) => {
           return (
             <>
-              {img.title && <Typography key={index} className={cn("absolute h-full w-full text-right", titleTextStyling, index === currentIndex ? fadeInStyle : fadeOutStyle)}>{img.title}</Typography>}
+              {img.title &&
+                <Typography
+                  key={index}
+                  className={cn("absolute text-right", titleTextStyling)}
+                  id={index === currentIndex ? 'fade-in' : 'fade-out'}
+                >
+                  {img.title}
+                </Typography>}
             </>
           )
         })}

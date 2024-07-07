@@ -22,7 +22,7 @@ export default function Page({ params }: { params: { category: string, subcatego
   var description = "BKK Circus is a group of young artists who are passionate about circus arts. They have been performing in various events and festivals in Thailand and abroad. They are known for their unique style and creativity. Their performances are a mix of acrobatics, juggling, and other circus acts. They are always looking for new ways to entertain and inspire their audience."
   const titleStyle = cn("sm:text-5xl mx-[5%]", description ? "text-3xl mt-[60px] text-center" : "text-base mt-[50px] text-right")
   return <Box className="mt-[20px]">
-    <ImageGallery images={bbkNoTitle} duration={5} autoSlideShow={true} fadeInDuration={'duration-[3s]'} fadeOutDuration={'duration-[5s]'} imageBoxStyling={["h-[45vh]", "w-full"]} imageStyling={["object-contain", "h-full", "w-full"]}/>
+    <ImageGallery images={bbkNoTitle} duration={5} autoSlideShow={true} imageBoxStyling={["h-[45vh]", "w-full"]} imageStyling={["object-contain", "h-auto", "w-auto", "max-h-full", "max-w-full", "left-[50%]", "tranform translate-x-[-50%]"]}/>
     <Typography className={titleStyle}>{title}</Typography>
     {description && <Typography className="text-center ml-[10%] mr-[5%] mt-[20px]">{description}</Typography>}
   </Box>
