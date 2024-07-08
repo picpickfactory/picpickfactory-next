@@ -1,18 +1,15 @@
-import ImageGalleryWrapper, { ImageGalleryChildProps } from "./wrapper";
+import ImageGalleryWrapper, {
+  ImageGalleryChildProps,
+  ImageGalleryOptions,
+} from "./wrapper";
 import {
   SingleImageTemplateProps,
   SingleImageTemplate,
 } from "./template/singleImageTemplate";
-import { Image } from "@/types/image";
 
-export interface SingleImageGalleryProps extends SingleImageTemplateProps {
-  images: Image[];
-  duration: number;
-  autoSlideShow: boolean;
-  onClick?: (image: Image) => void;
-}
-
-export const SingleImageGallery: React.FC<SingleImageGalleryProps> = ({
+export const SingleImageGallery: React.FC<
+  ImageGalleryOptions & SingleImageTemplateProps
+> = ({
   images,
   duration,
   autoSlideShow,

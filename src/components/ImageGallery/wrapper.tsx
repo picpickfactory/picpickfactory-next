@@ -5,6 +5,20 @@ import { Modal } from "@mui/material";
 import { Image } from "@/types/image";
 import "../../styles/imageGallery.css";
 
+export interface ImageGalleryOptions {
+  images: Image[];
+  duration: number;
+  autoSlideShow: boolean;
+  imageBoxStyling?: string[];
+  imageStyling?: string[];
+  titleBoxStyling?: string[];
+  titleTextStyling?: string[];
+  allowSwipe?: boolean;
+  allowDrag?: boolean;
+  onClick?: (image: Image) => void;
+  imageSkipLength?: number;
+}
+
 export interface ImageGalleryChildProps<T> {
   onTouchStart: (e: any) => void;
   onTouchMove: (e: any) => void;
@@ -86,6 +100,7 @@ const ImageGalleryWrapper = <T,>({
   };
 
   const handleSwipeLeft = () => {
+    if (!isHolding) return;
     setPrevIndex(currentIndex);
     setCurrentIndex((index) => {
       return (index + imageSkipLength) % images.length;
@@ -93,6 +108,7 @@ const ImageGalleryWrapper = <T,>({
   };
 
   const handleSwipeRight = () => {
+    if (!isHolding) return;
     setPrevIndex(currentIndex);
     setCurrentIndex((index) => {
       return (index - imageSkipLength + images.length) % images.length;

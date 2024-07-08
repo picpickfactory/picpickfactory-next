@@ -65,11 +65,11 @@ export default function Home() {
         images={bbk}
         duration={4}
         autoSlideShow={true}
+        onClick={onClick}
         imageBoxStyling={["h-[45vh]", "w-[85%]", "mr-[15%]", "mt-[120px]"]}
         imageStyling={["object-cover", "h-full", "w-full"]}
         titleBoxStyling={["mr-[18%] h-[40px] mt-4"]}
         titleTextStyling={["text-2xl right-0"]}
-        onClick={onClick}
       />
     </div>
   );
