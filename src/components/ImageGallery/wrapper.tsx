@@ -100,7 +100,6 @@ const ImageGalleryWrapper = <T,>({
   };
 
   const handleSwipeLeft = () => {
-    if (!isHolding) return;
     setPrevIndex(currentIndex);
     setCurrentIndex((index) => {
       return (index + imageSkipLength) % images.length;
@@ -108,7 +107,6 @@ const ImageGalleryWrapper = <T,>({
   };
 
   const handleSwipeRight = () => {
-    if (!isHolding) return;
     setPrevIndex(currentIndex);
     setCurrentIndex((index) => {
       return (index - imageSkipLength + images.length) % images.length;
@@ -116,6 +114,9 @@ const ImageGalleryWrapper = <T,>({
   };
 
   const onTouchStart = (e: any) => {
+    mouseClickTimeRef.current = window.setTimeout(() => {
+      setIsHolding(true);
+    }, 200);
     if (!allowSwipe) return;
     handleTouchStart(e);
     pauseSlideShow();
@@ -155,6 +156,7 @@ const ImageGalleryWrapper = <T,>({
   };
 
   const handleClick = (index: number) => () => {
+    console.log("onClick");
     if (isHolding || (index != currentIndex && index != prevIndex)) return;
     setIsSlideShowActive(false);
     onClick ? onClick(images[index]) : setShowImage(images[index]);
