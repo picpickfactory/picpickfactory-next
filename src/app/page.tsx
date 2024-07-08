@@ -1,7 +1,6 @@
 "use client";
 
-import ImageGallery from "@/components/ImageGallery";
-import { SingleImageGallery } from "@/components/ImageGallery/singleImageGallery";
+import { SingleImageGallery } from "@/components/ImageGallery";
 import { Image } from "@/types/image";
 import { useRouter } from "next/navigation";
 

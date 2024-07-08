@@ -1,8 +1,6 @@
 "use client";
 
-import ImageGallery from "@/components/ImageGallery";
-import SingleImageGa from "@/components/ImageGallery";
-import { SingleImageGallery } from "@/components/ImageGallery/singleImageGallery";
+import { SingleImageGallery } from "@/components/ImageGallery";
 import { cn } from "@/utils/tailwind";
 import { Box, Typography } from "@mui/material";
 

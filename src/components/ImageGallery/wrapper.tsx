@@ -57,14 +57,13 @@ const ImageGalleryWrapper = <T,>({
   const slideShowTimeRef = useRef<any>(null);
   const mouseClickTimeRef = useRef<any>(null);
 
-  // #TODO - Update this to allow for skipping images
   useEffect(() => {
     if (isSlideShowActive) {
       slideShowTimeRef.current = setTimeout(() => {
         setPrevIndex(currentIndex);
-        setCurrentIndex((index) =>
-          index >= images.length - 1 ? 0 : index + 1
-        );
+        setCurrentIndex((index) => {
+          return (index + imageSkipLength) % images.length;
+        });
       }, duration * 1000);
     }
 
@@ -88,20 +87,16 @@ const ImageGalleryWrapper = <T,>({
 
   const handleSwipeLeft = () => {
     setPrevIndex(currentIndex);
-    if (currentIndex >= images.length - 1) {
-      setCurrentIndex(0);
-    } else {
-      setCurrentIndex(currentIndex + 1);
-    }
+    setCurrentIndex((index) => {
+      return (index + imageSkipLength) % images.length;
+    });
   };
 
   const handleSwipeRight = () => {
     setPrevIndex(currentIndex);
-    if (currentIndex <= 0) {
-      setCurrentIndex(images.length - 1);
-    } else {
-      setCurrentIndex(currentIndex - 1);
-    }
+    setCurrentIndex((index) => {
+      return (index - imageSkipLength + images.length) % images.length;
+    });
   };
 
   const onTouchStart = (e: any) => {
