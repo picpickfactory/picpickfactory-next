@@ -9,7 +9,12 @@ export default function FooterSection() {
                 bgcolor: 'black',
                 height: '20px',
                 position: 'fixed',
-                bottom: 0
+                bottom: 0,
+                display: {
+                    xs: 'none', 
+                    
+                    md: 'block', 
+                },
             }}
         ></Box>
     )
