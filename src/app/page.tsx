@@ -4,7 +4,6 @@ import { SingleImageGallery } from "@/components/ImageGallery";
 import { Image } from "@/types/image";
 import { useRouter } from "next/navigation";
 
-
 const bbk = [
   {
     title: "Bangkok Circus 1",
@@ -61,15 +60,15 @@ export default function Home() {
   };
 
   return (
-    <div className="ml-[10px]">
+    <div>
       <SingleImageGallery
         images={bbk}
-        duration={4}
+        duration={6}
         autoSlideShow={true}
         onClick={onClick}
-        imageBoxStyling={["h-[45vh]", "w-[85%]", "mr-[15%]", "mt-[120px]"]}
+        imageBoxStyling={["h-[60vh]", "w-full", "mt-[15%]"]}
         imageStyling={["object-cover", "h-full", "w-full"]}
-        titleBoxStyling={["mr-[18%] h-[40px] mt-4"]}
+        titleBoxStyling={["mr-[5%] h-[40px] mt-4"]}
         titleTextStyling={["text-2xl right-0"]}
       />
     </div>
