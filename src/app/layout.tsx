@@ -7,6 +7,7 @@ import { CssBaseline } from "@mui/material";
 import { AppRouterCacheProvider } from "@mui/material-nextjs/v14-appRouter";
 
 import Navbar from '../components/Navbar'
+import Footer from '../components/Footer'
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -28,6 +29,7 @@ export default function RootLayout({
             <CssBaseline />
             <Navbar></Navbar>
             {children}
+            <Footer></Footer>
           </ThemeProvider>
         </AppRouterCacheProvider>
       </body>

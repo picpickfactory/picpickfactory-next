@@ -129,7 +129,7 @@ export default function HeaderSection() {
         <Box
             sx={{
             flexGrow: 1,
-            display: 'flex',
+            //display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
             justifyContent: 'center',

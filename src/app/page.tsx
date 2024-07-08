@@ -4,6 +4,7 @@ import { SingleImageGallery } from "@/components/ImageGallery";
 import { Image } from "@/types/image";
 import { useRouter } from "next/navigation";
 
+
 const bbk = [
   {
     title: "Bangkok Circus 1",
