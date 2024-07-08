@@ -59,7 +59,6 @@ export default function Page({
   );
   return (
     <Box className="mt-[20px]">
-      {/* <ImageGallery images={bbkNoTitle} duration={4} autoSlideShow={true} imageBoxStyling={["h-[45vh]", "w-full"]} imageStyling={["object-contain", "h-auto", "w-auto", "max-h-full", "max-w-full", "left-[50%]", "tranform translate-x-[-50%]"]}/> */}
       <SingleImageGallery
         images={bbkNoTitle}
         duration={4}
@@ -79,7 +78,7 @@ export default function Page({
       />
       <Typography className={titleStyle}>{title}</Typography>
       {description && (
-        <Typography className="text-center ml-[10%] mr-[5%] mt-[20px]">
+        <Typography className="text-center ml-[10%] mr-[5%] mt-[20px] mb-[40px]">
           {description}
         </Typography>
       )}
