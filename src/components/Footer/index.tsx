@@ -1,21 +1,7 @@
 import { Box } from "@mui/material";
 
 export default function FooterSection() {
-    return(
-        <Box
-            sx={{
-                mt: 4,
-                width: '100%',
-                bgcolor: 'black',
-                height: '20px',
-                position: 'fixed',
-                bottom: 0,
-                display: {
-                    xs: 'none', 
-                    
-                    md: 'block', 
-                },
-            }}
-        ></Box>
-    )
+  return (
+    <Box className="mt-4 w-full bg-black h-[20px] fixed bottom-0 hidden md:block"></Box>
+  );
 }
