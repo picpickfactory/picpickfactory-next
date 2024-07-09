@@ -12,7 +12,7 @@ import {
 import { useRouter } from "next/navigation";
 import { useEffect } from "react";
 
-import {bbk} from './data';
+import {bbk} from '@/app/data';
 
 export default function Home() {
   const router = useRouter();

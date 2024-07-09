@@ -49,6 +49,8 @@ const bbk = [
 const personal = [
     {
       title: "Red",
+      path: "/red",
+      description: "",
       url: [
         "https://firebasestorage.googleapis.com/v0/b/pic-pick-factory.appspot.com/o/Red-004.jpg?alt=media&token=f3640af6-43d6-4398-ac4c-dd25df69aa52",
         "https://firebasestorage.googleapis.com/v0/b/pic-pick-factory.appspot.com/o/Red-019.jpg?alt=media&token=d88fddc1-c735-4eeb-b6d0-4c5cd2a5474d",
@@ -58,6 +60,8 @@ const personal = [
     },
     {
         title: "S1",
+        path: "/s1",
+        description: "",
         url: [
           "https://firebasestorage.googleapis.com/v0/b/pic-pick-factory.appspot.com/o/S1-023.jpg?alt=media&token=a810daf3-50e3-42e6-930c-f6e8955fbf1f",
         ],
@@ -66,8 +70,9 @@ const personal = [
 
 const commissioned = [
     {
-      title: "Bangkok Circus",
-      description: "",
+      title: "Bangkok-Circus",
+      path: "/bangkok-circus",
+      description: "BKK Circus is a group of young artists who are passionate about circus arts. They have been performing in various events and festivals in Thailand and abroad. They are known for their unique style and creativity. Their performances are a mix of acrobatics, juggling, and other circus acts. They are always looking for new ways to entertain and inspire their audience.",
       url: [
         "https://firebasestorage.googleapis.com/v0/b/pic-pick-factory.appspot.com/o/BKKCIRCUS01.jpg?alt=media&token=1bca2fbf-2902-4761-945f-167dc12200cd",
         "https://firebasestorage.googleapis.com/v0/b/pic-pick-factory.appspot.com/o/BKKCIRCUS02.jpg?alt=media&token=4a06006c-aee9-4218-99e4-0ce38a6e3a42",
@@ -75,8 +80,9 @@ const commissioned = [
       ],
     },
     {
-        title: "London Brown",
-        description: "",
+        title: "London-Brown",
+        path: "/london-brown",
+        description: "London Brown is a group of young artists who are passionate about circus arts. They have been performing in various events and festivals in Thailand and abroad. They are known for their unique style and creativity. Their performances are a mix of acrobatics, juggling, and other circus acts. They are always looking for new ways to entertain and inspire their audience.",
         url: [
           "https://firebasestorage.googleapis.com/v0/b/pic-pick-factory.appspot.com/o/LB.jpg?alt=media&token=b41e836a-cdc4-4041-ad8e-091a0ee70d67",
         ],

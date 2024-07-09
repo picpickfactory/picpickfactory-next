@@ -12,7 +12,7 @@ import ExpandLess from '@mui/icons-material/ExpandLess';
 import ExpandMore from '@mui/icons-material/ExpandMore';
 import Collapse from '@mui/material/Collapse';
 
-import { personal , commissioned } from '../../app/data';
+import { personal , commissioned } from '@/app/data';
 
 
 // const personal = [
@@ -70,7 +70,7 @@ export default function HeaderSection() {
                     <List component="div" disablePadding>
 
                     {personal.map((item) => (
-                        <ListItemButton sx={{ pl: 4 }} key={item.title} href={`/personal/${item.title}`}>
+                        <ListItemButton sx={{ pl: 4 }} key={item.title} href={`/personal/${item.path}`}>
                             <ListItemText primary= {item.title} />
                         </ListItemButton>
                     ))}
@@ -86,7 +86,7 @@ export default function HeaderSection() {
                     <List component="div" disablePadding>
                     
                     {commissioned.map((item) => (
-                        <ListItemButton sx={{ pl: 4 }} key={item.title} href={`/commissioned/${item.title}`}>
+                        <ListItemButton sx={{ pl: 4 }} key={item.title} href={`/commissioned/${item.path}`}>
                             <ListItemText primary= {item.title} />
                         </ListItemButton>
                     ))}
@@ -131,7 +131,6 @@ export default function HeaderSection() {
         <Box
             sx={{
             flexGrow: 1,
-            //display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
             justifyContent: 'center',

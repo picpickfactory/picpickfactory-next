@@ -4,6 +4,10 @@ import { SingleImageGallery } from "@/components/ImageGallery";
 import { cn } from "@/utils/tailwind";
 import { Box, Typography } from "@mui/material";
 
+import { personal , commissioned } from "@/app/data";
+import { useEffect, useState } from "react";
+import { Image } from "@/types/image";
+
 const bbkNoTitle = [
   {
     title: "",
@@ -43,24 +47,74 @@ const bbkNoTitle = [
   },
 ];
 
+interface Data {
+  title: string;
+  path: string;
+  description: string;
+  url: string[];
+}
+
+
 export default function Page({
   params,
 }: {
   params: { category: string; subcategory: string };
 }) {
-  const title = "BANGKOK CIRCUS 2024";
-  var description =
-    "BKK Circus is a group of young artists who are passionate about circus arts. They have been performing in various events and festivals in Thailand and abroad. They are known for their unique style and creativity. Their performances are a mix of acrobatics, juggling, and other circus acts. They are always looking for new ways to entertain and inspire their audience.";
+
+
+  const [title, setTitle] = useState("");
+  const [description, setDescription] = useState("");
+  const [listImageUrl, setListImageUrl] = useState<Image[]>([]);
+
+  console.log(params.category);
+  console.log(params.subcategory);
+
+  useEffect(() => {
+
+    if(params.category === 'personal'){
+
+      personal.forEach((item: Data) => {
+        console.log(item);
+        if (item.path.replace("/","") === params.subcategory) {
+          
+          setTitle(item.title);
+          setDescription(item.description);
+
+          const image : Image[] = item.url.map((url : string) => {
+            return {url : url}
+          })
+          setListImageUrl(image);
+        
+        }
+      });
+
+    }else{
+
+      commissioned.forEach((item: Data) => {
+        console.log("path : " + item.path);
+        if (item.path.replace("/","") === params.subcategory) {
+          setTitle(item.title);
+          setDescription(item.description);
+          const image : Image[] = item.url.map((url : string) => {
+            return {url : url}
+          })
+          setListImageUrl(image);
+        }
+      });
+
+    }
+  },[]);
+  
   const titleStyle = cn(
     "sm:text-5xl mx-[5%]",
     description
       ? "text-3xl mt-[60px] text-center"
-      : "text-base mt-[50px] text-right"
+      : "text-xl mt-10 mr-10 text-right"
   );
   return (
     <Box className="mt-[20px]">
       <SingleImageGallery
-        images={bbkNoTitle}
+        images={listImageUrl}
         duration={4}
         autoSlideShow={true}
         titleBoxStyling={[]}
