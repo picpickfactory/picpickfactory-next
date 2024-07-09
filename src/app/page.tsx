@@ -2,7 +2,6 @@
 
 import { SingleImageGallery } from "@/components/ImageGallery";
 import { useScreenSize } from "@/hooks/useScreenSize";
-import { Image } from "@/types/image";
 import {
   isSizeGreaterThan,
   isSizeGreaterThanOrEqualTo,
@@ -10,9 +9,12 @@ import {
   isSizeLessThanOrEqualTo,
 } from "@/utils/screenSize";
 import { useRouter } from "next/navigation";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
-import {bbk} from '@/app/data';
+import {bbk , commissioned} from '@/app/data';
+
+import { Data } from "@/types/data";
+import { Image } from "@/types/image";
 
 interface HomeImageList {
   title: string,
@@ -24,8 +26,22 @@ export default function Home() {
   const router = useRouter();
   const screenSize = useScreenSize();
 
+  const [imgList , setImgList] = useState<Image[]>([]);
+
   useEffect(() => {
+    const list : Image[] = commissioned.map((item : Data) => {
+
+      return {title : item.title,
+              path : item.path,
+              url : item.url[0]
+             }
+
+    })
+
+    setImgList(list);
+
     console.log(screenSize);
+
   }, [screenSize]);
 
   const onClick = (image: Image) => {
@@ -36,7 +52,7 @@ export default function Home() {
     <div>
       {isSizeLessThanOrEqualTo(screenSize, "sm") ? (
         <SingleImageGallery
-          images={bbk}
+          images={imgList}
           duration={6}
           autoSlideShow={true}
           onClick={onClick}
@@ -47,7 +63,7 @@ export default function Home() {
         />
       ) : (
         <SingleImageGallery
-          images={bbk}
+          images={imgList}
           duration={6}
           autoSlideShow={true}
           onClick={onClick}
