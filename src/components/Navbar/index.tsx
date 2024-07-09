@@ -122,14 +122,16 @@ export default function HeaderSection() {
             justifyContent: 'center',
             }}
         >
-            <Link href="/">
-            <Typography className="text-3xl text-center">
-            PICPICKFACTORY
+            <Typography className="text-3xl text-center" >
+                <Link href="/">
+                 PICPICKFACTORY
+                 </Link>
             </Typography>
             <Typography className="text-center">
-            BY KASIDIT SINGHARES
+                <Link href="/">
+                BY KASIDIT SINGHARES
+                </Link>
             </Typography>
-            </Link>
         </Box>
     </Box>
   );
