@@ -12,18 +12,20 @@ import ExpandLess from '@mui/icons-material/ExpandLess';
 import ExpandMore from '@mui/icons-material/ExpandMore';
 import Collapse from '@mui/material/Collapse';
 
+import { personal , commissioned } from '../../app/data';
 
-const personal = [
-    {title : 'testper1'},
-    {title : 'testper2'},
-    {title : 'testper3'},
-]
 
-const commissioned = [
-    {title : 'testcom1'},
-    {title : 'testcom2'},
-    {title : 'testcom3'},
-]
+// const personal = [
+//     {title : 'testper1'},
+//     {title : 'testper2'},
+//     {title : 'testper3'},
+// ]
+
+// const commissioned = [
+//     {title : 'testcom1'},
+//     {title : 'testcom2'},
+//     {title : 'testcom3'},
+// ]
 
 
 export default function HeaderSection() {
