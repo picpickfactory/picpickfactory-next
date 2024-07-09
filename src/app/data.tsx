@@ -70,7 +70,7 @@ const personal = [
 
 const commissioned = [
     {
-      title: "Bangkok-Circus",
+      title: "Bangkok Circus",
       path: "/bangkok-circus",
       description: "BKK Circus is a group of young artists who are passionate about circus arts. They have been performing in various events and festivals in Thailand and abroad. They are known for their unique style and creativity. Their performances are a mix of acrobatics, juggling, and other circus acts. They are always looking for new ways to entertain and inspire their audience.",
       url: [
@@ -80,7 +80,7 @@ const commissioned = [
       ],
     },
     {
-        title: "London-Brown",
+        title: "London Brown",
         path: "/london-brown",
         description: "London Brown is a group of young artists who are passionate about circus arts. They have been performing in various events and festivals in Thailand and abroad. They are known for their unique style and creativity. Their performances are a mix of acrobatics, juggling, and other circus acts. They are always looking for new ways to entertain and inspire their audience.",
         url: [
