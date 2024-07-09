@@ -14,6 +14,12 @@ import { useEffect } from "react";
 
 import {bbk} from '@/app/data';
 
+interface HomeImageList {
+  title: string,
+  path: string,
+  imgUrl: string,
+}
+
 export default function Home() {
   const router = useRouter();
   const screenSize = useScreenSize();
