@@ -114,14 +114,7 @@ export default function HeaderSection() {
             </SwipeableDrawer>
         </IconButton>
       </Box>
-        <Box
-            sx={{
-            flexGrow: 1,
-            flexDirection: 'column',
-            alignItems: 'center',
-            justifyContent: 'center',
-            }}
-        >
+        <Box className="flex flex-grow flex-col items-center justify-center">
             <Typography className="text-3xl text-center" >
                 <Link href="/">
                  PICPICKFACTORY
