@@ -10,7 +10,7 @@ export default function Page() {
             </Typography>
             <Typography className="mx-5 my-5 text-sm">
                 Kasidit Singhares (2001) is a Bangkok-based Photographer. <br /> 
-                Graduated from King Mongkut&apos; Institute of Technology Ladkrabang, School of Arts and design with a major in a Photograph.<br /> Most of Kasidit&rsquo;s work based on Fashion and Advertising Photography
+                Graduated from King Mongkut&rsquo;s Institute of Technology Ladkrabang, School of Arts and design with a major in a Photograph.<br /> Most of Kasidit&rsquo;s work based on Fashion and Advertising Photography
             </Typography>
             <img className="mx-28 my-10 size-2/3" src="https://firebasestorage.googleapis.com/v0/b/pic-pick-factory.appspot.com/o/aboutus%2FIMG_0415.jpg?alt=media&token=1c053fdb-b41f-4d6e-9b57-e2f2da7a8d8e" alt="image"/>
         </Box>
