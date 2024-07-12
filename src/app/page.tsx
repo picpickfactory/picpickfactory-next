@@ -11,16 +11,10 @@ import {
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 
-import {bbk , commissioned} from '@/app/data';
+import {commissioned , personal} from '@/app/data';
 
 import { Data } from "@/types/data";
 import { Image } from "@/types/image";
-
-interface HomeImageList {
-  title: string,
-  path: string,
-  imgUrl: string,
-}
 
 export default function Home() {
   const router = useRouter();
@@ -29,7 +23,15 @@ export default function Home() {
   const [imgList , setImgList] = useState<Image[]>([]);
 
   useEffect(() => {
-    const list : Image[] = commissioned.map((item : Data) => {
+    const list_personal : Image[] = personal.map((item : Data) => {
+
+      return {title : item.title,
+              path : item.path,
+              url : item.url[0]
+             }
+
+    })
+    const list_commissioned : Image[] = commissioned.map((item : Data) => {
 
       return {title : item.title,
               path : item.path,
@@ -38,7 +40,7 @@ export default function Home() {
 
     })
 
-    setImgList(list);
+    setImgList(list_personal.concat(list_commissioned));
 
     console.log(screenSize);
 
