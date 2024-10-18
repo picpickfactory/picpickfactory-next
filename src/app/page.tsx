@@ -26,6 +26,7 @@ export default function Home() {
     const list_personal : Image[] = personal.map((item : Data) => {
 
       return {title : item.title,
+              type : item.type,
               path : item.path,
               url : item.url[0]
              }
@@ -34,6 +35,7 @@ export default function Home() {
     const list_commissioned : Image[] = commissioned.map((item : Data) => {
 
       return {title : item.title,
+              type : item.type,
               path : item.path,
               url : item.url[0]
              }
