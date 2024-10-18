@@ -1,6 +1,7 @@
 const personal = [
     {
       "title": "BANGKOK CIRCUS 1",
+      "type": "personal",
       "path": "/bangkok-circus-1",
       "description": "The concept of merging the circus with the essence of Bangkok and extending it into a fashion photoshoot series called \"Bangkok Circus.\" This presentation is in a fun format and compares it to being a city, the city of Bangkok, from my perspective of being bored, crowded, and not very pleasant, but with the addition of lively characters it create a contrast.",
       "url": [
@@ -17,6 +18,7 @@ const personal = [
     },
     {
       "title": "BANGKOK CIRCUS 2",
+      "type": "personal",
       "path": "/bangkok-circus-2",
       "description": "The concept of merging the circus with the essence of Bangkok and extending it into a fashion photoshoot series called \"Bangkok Circus.\" This presentation is in a fun format and compares it to being a city, the city of Bangkok, from my perspective of being bored, crowded, and not very pleasant, but with the addition of lively characters it create a contrast.",
       "url": [
@@ -34,6 +36,7 @@ const personal = [
     },
     {
       "title": "\"CLASSIC WOMEN 2023\"",
+      "type": "personal",
       "path": "/classic-women-2023",
       "description": "",
       "url": [
@@ -46,6 +49,7 @@ const personal = [
     },
     {
       "title": "MASAN TAIPEI 2024",
+      "type": "personal",
       "path": "/masan-taipei-2024",
       "description": "",
       "url": [
@@ -59,6 +63,7 @@ const personal = [
 const commissioned = [
     {
       "title": "LONDONBROWN",
+      "type": "commissioned",
       "path": "/london-brown",
       "description": "",
       "url": [
@@ -78,6 +83,7 @@ const commissioned = [
     },
       {
         title: "MERCHIS WITH TRUEBLUETATTOOO",
+        "type": "commissioned",
         path: "/merchis-with-truebluetattooo",
         description: "",
         url: [
@@ -86,6 +92,7 @@ const commissioned = [
       },
       {
         "title": "MONROECLUBS",
+        "type": "commissioned",
         "path": "/monroeclubs",
         "description": "",
         "url": [
@@ -98,6 +105,7 @@ const commissioned = [
       },
       {
         "title": "ZAO_NUI",
+        "type": "commissioned",
         "path": "/zao-nui",
         "description": "",
         "url": [
@@ -119,6 +127,7 @@ const commissioned = [
       },
       {
         "title": "Frank&Merchis",
+        "type": "commissioned",
         "path": "/frank-merchis",
         "description": "",
         "url": [
@@ -133,6 +142,7 @@ const commissioned = [
       },
       {
         "title": "ZAAP ON SALE",
+        "type": "commissioned",
         "path": "/zaap-on-sale",
         "description": "",
         "url": [

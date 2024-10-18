@@ -47,7 +47,7 @@ export default function Home() {
   }, [screenSize]);
 
   const onClick = (image: Image) => {
-    router.push(image.path ? `/commissioned/${image.path}` : "/");
+    router.push(image.path ? `/${image.type}/${image.path}` : "/");
   };
 
   return (
