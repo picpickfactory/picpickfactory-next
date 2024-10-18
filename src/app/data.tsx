@@ -119,7 +119,7 @@ const commissioned = [
       },
       {
         "title": "Frank&Merchis",
-        "path": "/frank&merchis",
+        "path": "/frank-merchis",
         "description": "",
         "url": [
           "https://firebasestorage.googleapis.com/v0/b/pic-pick-factory.appspot.com/o/commissioned%2FFrank%26Merchis%2F1.jpg?alt=media&token=845d00ca-cbca-4933-9f62-70606950d402",
@@ -133,7 +133,7 @@ const commissioned = [
       },
       {
         "title": "ZAAP ON SALE",
-        "path": "/zaap_on_sale",
+        "path": "/zaap-on-sale",
         "description": "",
         "url": [
           "https://firebasestorage.googleapis.com/v0/b/pic-pick-factory.appspot.com/o/commissioned%2FZAAP%20ON%20SALE%2F1.jpg?alt=media&token=8ce0a06f-12a7-46eb-8c2a-a24f0a49cfd2",
