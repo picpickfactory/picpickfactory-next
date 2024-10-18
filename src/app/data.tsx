@@ -126,7 +126,7 @@ const commissioned = [
         ]
       },
       {
-        "title": "Frank&Merchis",
+        "title": "BACKSTAGE FOR Frank! Garçon  #bifw24 : HOUSE OF FRANK! GARÇON",
         "type": "commissioned",
         "path": "/frank-merchis",
         "description": "",
