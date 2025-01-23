@@ -157,7 +157,7 @@ const commissioned = [
         ]
       },
       {
-        "title": "Jaspal Portfolio",
+        "title": "Jaspal",
         "type": "commissioned",
         "path": "/jaspal-portfolio",
         "description": "",
