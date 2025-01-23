@@ -157,7 +157,7 @@ const commissioned = [
         ]
       },
       {
-        "title": "Jaspal",
+        "title": "Jaspal Festival Season",
         "type": "commissioned",
         "path": "/jaspal-portfolio",
         "description": "",
