@@ -35,7 +35,7 @@ const personal = [
       ]
     },
     {
-      "title": "\"CLASSIC WOMEN 2023\"",
+      "title": "CLASSIC WOMEN 2023 (University Assignment)",
       "type": "personal",
       "path": "/classic-women-2023",
       "description": "",
