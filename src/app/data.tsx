@@ -103,41 +103,6 @@ const commissioned = [
         ],
       },
       {
-        "title": "MONROECLUBS",
-        "type": "commissioned",
-        "path": "/monroeclubs",
-        "description": "",
-        "url": [
-          "https://firebasestorage.googleapis.com/v0/b/pic-pick-factory.appspot.com/o/commissioned%2FMONROECLUBS%2FMONROECLUBS.jpg?alt=media&token=86cabbac-298e-4e4c-b165-abfc917abfd1",
-          "https://firebasestorage.googleapis.com/v0/b/pic-pick-factory.appspot.com/o/commissioned%2FMONROECLUBS%2FGreen-102.jpg?alt=media&token=bc44d217-6554-4d6d-9d89-1268b1ee0492",
-          "https://firebasestorage.googleapis.com/v0/b/pic-pick-factory.appspot.com/o/commissioned%2FMONROECLUBS%2FRed-035.jpg?alt=media&token=1560e15d-c532-4640-9d32-f1ccd93271ef",
-          "https://firebasestorage.googleapis.com/v0/b/pic-pick-factory.appspot.com/o/commissioned%2FMONROECLUBS%2FRed-047.jpg?alt=media&token=90df5f68-07b9-4922-98a1-e33c7179772b",
-          "https://firebasestorage.googleapis.com/v0/b/pic-pick-factory.appspot.com/o/commissioned%2FMONROECLUBS%2FRed-080.jpg?alt=media&token=41d50857-19fa-4ec5-9ae1-78387be1b6d4"
-        ]
-      },
-      {
-        "title": "ZAO_NUI",
-        "type": "commissioned",
-        "path": "/zao-nui",
-        "description": "",
-        "url": [
-          "https://firebasestorage.googleapis.com/v0/b/pic-pick-factory.appspot.com/o/commissioned%2FZAO_NUI%2FUntitled-2.jpg?alt=media&token=39567b36-be8f-4224-8c1c-7c5418ded98c",
-          "https://firebasestorage.googleapis.com/v0/b/pic-pick-factory.appspot.com/o/commissioned%2FZAO_NUI%2FRed-001.jpg?alt=media&token=3ec03e92-f426-4d5c-9662-ca2175ecf3fb",
-          "https://firebasestorage.googleapis.com/v0/b/pic-pick-factory.appspot.com/o/commissioned%2FZAO_NUI%2FRed-002.jpg?alt=media&token=6924184f-78bd-4bbb-b990-2aea8bd83b4a",
-          "https://firebasestorage.googleapis.com/v0/b/pic-pick-factory.appspot.com/o/commissioned%2FZAO_NUI%2FRed-003.jpg?alt=media&token=9790cd50-d16a-4127-b758-17169d672ff0",
-          "https://firebasestorage.googleapis.com/v0/b/pic-pick-factory.appspot.com/o/commissioned%2FZAO_NUI%2FRed-004.jpg?alt=media&token=97defa9f-f1cd-4dcd-9251-3133ccce8582",
-          "https://firebasestorage.googleapis.com/v0/b/pic-pick-factory.appspot.com/o/commissioned%2FZAO_NUI%2FRed-005.jpg?alt=media&token=a5c3ac3b-77d1-4682-a956-3dbef5a6c72e",
-          "https://firebasestorage.googleapis.com/v0/b/pic-pick-factory.appspot.com/o/commissioned%2FZAO_NUI%2FRed-006.jpg?alt=media&token=2be7396d-d13c-4155-bed0-33ba0fd5f515",
-          "https://firebasestorage.googleapis.com/v0/b/pic-pick-factory.appspot.com/o/commissioned%2FZAO_NUI%2FRed-007.jpg?alt=media&token=49b4e3ce-234b-4a28-8059-3ecf2479dc95",
-          "https://firebasestorage.googleapis.com/v0/b/pic-pick-factory.appspot.com/o/commissioned%2FZAO_NUI%2FRed-008.jpg?alt=media&token=7f599e18-b279-44e2-904e-34f6fc4a9ad5",
-          "https://firebasestorage.googleapis.com/v0/b/pic-pick-factory.appspot.com/o/commissioned%2FZAO_NUI%2FRed-009.jpg?alt=media&token=29f662d2-6f50-498f-b373-0fd049c513a1",
-          "https://firebasestorage.googleapis.com/v0/b/pic-pick-factory.appspot.com/o/commissioned%2FZAO_NUI%2FRed-010.jpg?alt=media&token=09629301-6ad1-46f3-bbe4-8ada46ea834a",
-          "https://firebasestorage.googleapis.com/v0/b/pic-pick-factory.appspot.com/o/commissioned%2FZAO_NUI%2FRed-011.jpg?alt=media&token=1911a36c-1e8d-473f-8ee0-ed7d019597cf",
-          "https://firebasestorage.googleapis.com/v0/b/pic-pick-factory.appspot.com/o/commissioned%2FZAO_NUI%2FRed-012.jpg?alt=media&token=eae7d65a-56c7-4952-a247-50dfef14187f",
-          "https://firebasestorage.googleapis.com/v0/b/pic-pick-factory.appspot.com/o/commissioned%2FZAO_NUI%2FRed-013.jpg?alt=media&token=13237fa3-e73a-4b01-9d31-7ef6de383899"
-        ]
-      },
-      {
         "title": "BACKSTAGE FOR Frank! Garçon  #bifw24 : HOUSE OF FRANK! GARÇON",
         "type": "commissioned",
         "path": "/frank-merchis",
