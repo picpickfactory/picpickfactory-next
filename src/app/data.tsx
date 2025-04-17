@@ -99,7 +99,7 @@ const commissioned = [
       "path": "/aplan-rookies",
       "description": "",
       "url": [
-        "https://firebasestorage.googleapis.com/v0/b/pic-pick-factory.appspot.com/o/commissioned%2FAPLAN_ROOKIES%2F24MAR_ROOKIE-POSTER_GROUP.jpg?alt=media&token=1e226c96-e0d9-45ce-97f6-4868575d0dcc",
+        "https://github.com/picpickfactory/picpickfactory-next/blob/main/pic/24MAR_ROOKIE-POSTER_GROUP.jpg?raw=true",
         "https://firebasestorage.googleapis.com/v0/b/pic-pick-factory.appspot.com/o/commissioned%2FAPLAN_ROOKIES%2F24MAR_ROOKIE-POSTER_MINLEE.jpg?alt=media&token=627dad90-c4c4-4131-9f1f-999d544ae8d0",
         "https://firebasestorage.googleapis.com/v0/b/pic-pick-factory.appspot.com/o/commissioned%2FAPLAN_ROOKIES%2F24MAR_ROOKIE-POSTER_RUKA.jpg?alt=media&token=c41db13d-f5a7-440c-ae53-f5ecd304fcc4",
         "https://firebasestorage.googleapis.com/v0/b/pic-pick-factory.appspot.com/o/commissioned%2FAPLAN_ROOKIES%2F24MAR_ROOKIE-POSTER_U.JAY.jpg?alt=media&token=c5d2cd98-9df3-48df-8432-0a6c934b0644",
