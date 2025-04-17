@@ -122,6 +122,19 @@ const commissioned = [
         ]
       },
       {
+        "title": "Jaspal Festival Season",
+        "type": "commissioned",
+        "path": "/jaspal-festival-season",
+        "description": "",
+        "url": [
+          "https://firebasestorage.googleapis.com/v0/b/pic-pick-factory.appspot.com/o/commissioned%2FJaspal%20Portfolio%2F1.jpg?alt=media&token=f57299ff-efd2-44a7-8e70-139b2f321ea5",
+          "https://firebasestorage.googleapis.com/v0/b/pic-pick-factory.appspot.com/o/commissioned%2FJaspal%20Portfolio%2F2.jpg?alt=media&token=80d9d2bb-7fcc-410c-be46-7bf2636ab7ae",
+          "https://firebasestorage.googleapis.com/v0/b/pic-pick-factory.appspot.com/o/commissioned%2FJaspal%20Portfolio%2F3.jpg?alt=media&token=1cc2fc7f-0afc-4452-923f-e0047d16683d",
+          "https://firebasestorage.googleapis.com/v0/b/pic-pick-factory.appspot.com/o/commissioned%2FJaspal%20Portfolio%2F4.jpg?alt=media&token=4b6518c7-d6ee-4240-b9d5-3019ebb82cd1",
+          "https://firebasestorage.googleapis.com/v0/b/pic-pick-factory.appspot.com/o/commissioned%2FJaspal%20Portfolio%2F5.jpg?alt=media&token=818dd384-dbac-454e-824e-dadfc0d5c0bb",
+        ]
+      },
+      {
         "title": "ZAAP ON SALE",
         "type": "commissioned",
         "path": "/zaap-on-sale",
