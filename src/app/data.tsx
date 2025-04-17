@@ -93,15 +93,19 @@ const commissioned = [
         "https://firebasestorage.googleapis.com/v0/b/pic-pick-factory.appspot.com/o/commissioned%2FLONDONBROWN%2FNone-023.jpg?alt=media&token=06524282-e0b4-4e36-b484-b32e9b2b20d6"
       ]
     },
-      {
-        title: "MERCHIS WITH TRUEBLUETATTOOO",
-        "type": "commissioned",
-        path: "/merchis-with-truebluetattooo",
-        description: "",
-        url: [
-          "https://firebasestorage.googleapis.com/v0/b/pic-pick-factory.appspot.com/o/commissioned%2FMERCHIS%20WITH%20TRUEBLUETATTOOO%2FIMG_7391.JPG?alt=media&token=f704b016-1466-436a-848d-2a8e72762bc6",
-        ],
-      },
+    {
+      "title": "APLAN_ROOKIES",
+      "type": "commissioned",
+      "path": "/aplan-rookies",
+      "description": "",
+      "url": [
+        "https://firebasestorage.googleapis.com/v0/b/pic-pick-factory.appspot.com/o/commissioned%2FAPLAN_ROOKIES%2F24MAR_ROOKIE-POSTER_GROUP.jpg?alt=media&token=1e226c96-e0d9-45ce-97f6-4868575d0dcc",
+        "https://firebasestorage.googleapis.com/v0/b/pic-pick-factory.appspot.com/o/commissioned%2FAPLAN_ROOKIES%2F24MAR_ROOKIE-POSTER_MINLEE.jpg?alt=media&token=627dad90-c4c4-4131-9f1f-999d544ae8d0",
+        "https://firebasestorage.googleapis.com/v0/b/pic-pick-factory.appspot.com/o/commissioned%2FAPLAN_ROOKIES%2F24MAR_ROOKIE-POSTER_RUKA.jpg?alt=media&token=c41db13d-f5a7-440c-ae53-f5ecd304fcc4",
+        "https://firebasestorage.googleapis.com/v0/b/pic-pick-factory.appspot.com/o/commissioned%2FAPLAN_ROOKIES%2F24MAR_ROOKIE-POSTER_U.JAY.jpg?alt=media&token=c5d2cd98-9df3-48df-8432-0a6c934b0644",
+        "https://firebasestorage.googleapis.com/v0/b/pic-pick-factory.appspot.com/o/commissioned%2FAPLAN_ROOKIES%2F24MAR_ROOKIE-POSTER_WINNIE.jpg?alt=media&token=91d60511-6134-4418-9a78-99d379e1663b",
+      ]
+    },
       {
         "title": "BACKSTAGE FOR Frank! Garçon  #bifw24 : HOUSE OF FRANK! GARÇON",
         "type": "commissioned",
@@ -115,6 +119,19 @@ const commissioned = [
           "https://firebasestorage.googleapis.com/v0/b/pic-pick-factory.appspot.com/o/commissioned%2FFrank%26Merchis%2F5.jpg?alt=media&token=1177301f-a886-4f18-87d4-5dc0a7f537fe",
           "https://firebasestorage.googleapis.com/v0/b/pic-pick-factory.appspot.com/o/commissioned%2FFrank%26Merchis%2F6.jpg?alt=media&token=ec16ffdf-235a-474f-a72f-14b02102f33e",
           "https://firebasestorage.googleapis.com/v0/b/pic-pick-factory.appspot.com/o/commissioned%2FFrank%26Merchis%2F7.jpg?alt=media&token=eadda2c3-a05d-4095-92d3-0701ac54deaa"
+        ]
+      },
+      {
+        "title": "Jaspal Festival Season",
+        "type": "commissioned",
+        "path": "/jaspal-portfolio",
+        "description": "",
+        "url": [
+          "https://firebasestorage.googleapis.com/v0/b/pic-pick-factory.appspot.com/o/commissioned%2FJaspal%20Portfolio%2F1.jpg?alt=media&token=f57299ff-efd2-44a7-8e70-139b2f321ea5",
+          "https://firebasestorage.googleapis.com/v0/b/pic-pick-factory.appspot.com/o/commissioned%2FJaspal%20Portfolio%2F2.jpg?alt=media&token=80d9d2bb-7fcc-410c-be46-7bf2636ab7ae",
+          "https://firebasestorage.googleapis.com/v0/b/pic-pick-factory.appspot.com/o/commissioned%2FJaspal%20Portfolio%2F3.jpg?alt=media&token=1cc2fc7f-0afc-4452-923f-e0047d16683d",
+          "https://firebasestorage.googleapis.com/v0/b/pic-pick-factory.appspot.com/o/commissioned%2FJaspal%20Portfolio%2F4.jpg?alt=media&token=4b6518c7-d6ee-4240-b9d5-3019ebb82cd1",
+          "https://firebasestorage.googleapis.com/v0/b/pic-pick-factory.appspot.com/o/commissioned%2FJaspal%20Portfolio%2F5.jpg?alt=media&token=818dd384-dbac-454e-824e-dadfc0d5c0bb",
         ]
       },
       {
@@ -134,17 +151,13 @@ const commissioned = [
         ]
       },
       {
-        "title": "Jaspal Festival Season",
+        "title": "MERCHIS WITH TRUEBLUETATTOOO",
         "type": "commissioned",
-        "path": "/jaspal-portfolio",
+        "path": "/merchis-with-truebluetattooo",
         "description": "",
         "url": [
-          "https://firebasestorage.googleapis.com/v0/b/pic-pick-factory.appspot.com/o/commissioned%2FJaspal%20Portfolio%2F1.jpg?alt=media&token=f57299ff-efd2-44a7-8e70-139b2f321ea5",
-          "https://firebasestorage.googleapis.com/v0/b/pic-pick-factory.appspot.com/o/commissioned%2FJaspal%20Portfolio%2F2.jpg?alt=media&token=80d9d2bb-7fcc-410c-be46-7bf2636ab7ae",
-          "https://firebasestorage.googleapis.com/v0/b/pic-pick-factory.appspot.com/o/commissioned%2FJaspal%20Portfolio%2F3.jpg?alt=media&token=1cc2fc7f-0afc-4452-923f-e0047d16683d",
-          "https://firebasestorage.googleapis.com/v0/b/pic-pick-factory.appspot.com/o/commissioned%2FJaspal%20Portfolio%2F4.jpg?alt=media&token=4b6518c7-d6ee-4240-b9d5-3019ebb82cd1",
-          "https://firebasestorage.googleapis.com/v0/b/pic-pick-factory.appspot.com/o/commissioned%2FJaspal%20Portfolio%2F5.jpg?alt=media&token=818dd384-dbac-454e-824e-dadfc0d5c0bb",
-        ]
+          "https://firebasestorage.googleapis.com/v0/b/pic-pick-factory.appspot.com/o/commissioned%2FMERCHIS%20WITH%20TRUEBLUETATTOOO%2FIMG_7391.JPG?alt=media&token=f704b016-1466-436a-848d-2a8e72762bc6",
+        ],
       },
 ];
 
