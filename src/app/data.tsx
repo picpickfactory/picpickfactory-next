@@ -87,6 +87,19 @@ const commissioned = [
           "https://firebasestorage.googleapis.com/v0/b/pic-pick-factory.appspot.com/o/commissioned%2FAdornment%20Club%2F2_04.jpg?alt=media&token=f02d101e-13e8-4706-b7d3-2909e7ec0cb9",
         ]
       },
+      {
+        "title": "Lookwai/You Still Do",
+        "type": "commissioned",
+        "path": "/lookwai",
+        "description": "",
+        "url": [
+          "https://firebasestorage.googleapis.com/v0/b/pic-pick-factory.appspot.com/o/commissioned%2FLookwai%20You%20Still%20Do%2F1.JPG?alt=media&token=338cfe61-10dd-4859-9b8c-ceffb6c54477",
+          "https://firebasestorage.googleapis.com/v0/b/pic-pick-factory.appspot.com/o/commissioned%2FLookwai%20You%20Still%20Do%2F2.jpg?alt=media&token=5f3e7378-3d55-4e20-9caf-579fb8c8752b",
+          "https://firebasestorage.googleapis.com/v0/b/pic-pick-factory.appspot.com/o/commissioned%2FLookwai%20You%20Still%20Do%2F3.jpg?alt=media&token=267799c7-59d3-408b-bfbb-019c6a85ab7e",
+          "https://firebasestorage.googleapis.com/v0/b/pic-pick-factory.appspot.com/o/commissioned%2FLookwai%20You%20Still%20Do%2F4.jpg?alt=media&token=8df3a918-254b-4169-877a-fd56e99ab462",
+          "https://firebasestorage.googleapis.com/v0/b/pic-pick-factory.appspot.com/o/commissioned%2FLookwai%20You%20Still%20Do%2F5.jpg?alt=media&token=26f552ed-3cfc-441e-8e0c-235651da7e89",
+        ]
+      },
     {
       "title": "LONDONBROWN",
       "type": "commissioned",
@@ -108,7 +121,7 @@ const commissioned = [
       ]
     },
     {
-      "title": "Aside ROOKIES",
+      "title": "ASIDE ROOKIES",
       "type": "commissioned",
       "path": "/aplan-rookies",
       "description": "",
@@ -172,20 +185,7 @@ const commissioned = [
         "url": [
           "https://firebasestorage.googleapis.com/v0/b/pic-pick-factory.appspot.com/o/commissioned%2FMERCHIS%20WITH%20TRUEBLUETATTOOO%2FIMG_7391.JPG?alt=media&token=f704b016-1466-436a-848d-2a8e72762bc6",
         ],
-      },
-      {
-        "title": "Lookwai/You Still Do",
-        "type": "commissioned",
-        "path": "/lookwai",
-        "description": "",
-        "url": [
-          "https://firebasestorage.googleapis.com/v0/b/pic-pick-factory.appspot.com/o/commissioned%2FLookwai%20You%20Still%20Do%2F1.JPG?alt=media&token=338cfe61-10dd-4859-9b8c-ceffb6c54477",
-          "https://firebasestorage.googleapis.com/v0/b/pic-pick-factory.appspot.com/o/commissioned%2FLookwai%20You%20Still%20Do%2F2.jpg?alt=media&token=5f3e7378-3d55-4e20-9caf-579fb8c8752b",
-          "https://firebasestorage.googleapis.com/v0/b/pic-pick-factory.appspot.com/o/commissioned%2FLookwai%20You%20Still%20Do%2F3.jpg?alt=media&token=267799c7-59d3-408b-bfbb-019c6a85ab7e",
-          "https://firebasestorage.googleapis.com/v0/b/pic-pick-factory.appspot.com/o/commissioned%2FLookwai%20You%20Still%20Do%2F4.jpg?alt=media&token=8df3a918-254b-4169-877a-fd56e99ab462",
-          "https://firebasestorage.googleapis.com/v0/b/pic-pick-factory.appspot.com/o/commissioned%2FLookwai%20You%20Still%20Do%2F5.jpg?alt=media&token=26f552ed-3cfc-441e-8e0c-235651da7e89",
-        ]
-      },
+      }
 ];
 
 
