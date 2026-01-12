@@ -1,71 +1,51 @@
 "use client";
 
-import { SingleImageGallery } from "@/components/ImageGallery";
-import { cn } from "@/utils/tailwind";
+import { useParams } from "next/navigation";
+import { useEffect, useState } from "react";
 import { Box, Typography } from "@mui/material";
 
-import { personal , commissioned } from "@/app/data";
-import { useEffect, useState } from "react";
-
+import { personal, commissioned } from "@/app/data";
 import { Image } from "@/types/image";
 import { Data } from "@/types/data";
+import { SingleImageGallery } from "@/components/ImageGallery";
+import { cn } from "@/utils/tailwind";
 
-export default function Page({
-  params,
-}: {
-  params: { category: string; subcategory: string };
-}) {
-
+export default function Page() {
+  const params = useParams<{ category: string; subcategory: string }>();
 
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState<string | undefined>("");
   const [listImageUrl, setListImageUrl] = useState<Image[]>([]);
 
-  console.log(params.category);
-  console.log(params.subcategory);
-
   useEffect(() => {
+    if (!params?.category || !params?.subcategory) return;
 
-    if(params.category === 'personal'){
+    const source = params.category === "personal" ? personal : commissioned;
 
-      personal.forEach((item: Data) => {
-        console.log(item);
-        if (item.path.replace("/","") === params.subcategory) {
-          
-          setTitle(item.title);
-          setDescription(item.description);
+    const found = source.find(
+      (item: Data) => item.path.replace("/", "") === params.subcategory
+    );
 
-          const image : Image[] = item.url.map((url : string) => {
-            return {url : url}
-          })
-          setListImageUrl(image);
-        
-        }
-      });
-
-    }else{
-
-      commissioned.forEach((item: Data) => {
-        console.log("path : " + item.path);
-        if (item.path.replace("/","") === params.subcategory) {
-          setTitle(item.title);
-          setDescription(item.description);
-          const image : Image[] = item.url.map((url : string) => {
-            return {url : url}
-          })
-          setListImageUrl(image);
-        }
-      });
-
+    if (!found) {
+      setTitle("");
+      setDescription("");
+      setListImageUrl([]);
+      return;
     }
-  },[]);
-  
+
+    setTitle(found.title);
+    setDescription(found.description);
+
+    setListImageUrl(found.url.map((url: string) => ({ url })));
+  }, [params?.category, params?.subcategory]);
+
   const titleStyle = cn(
     "sm:text-5xl mx-[5%]",
     description
       ? "text-3xl mt-[60px] text-center"
       : "text-xl mt-10 mr-10 text-right"
   );
+
   return (
     <Box className="mt-[20px]">
       <SingleImageGallery
@@ -86,6 +66,7 @@ export default function Page({
         imageBoxStyling={["h-[45vh]", "w-full"]}
       />
       <Typography className={titleStyle}>{title}</Typography>
+
       {description && (
         <Typography className="text-center ml-[10%] mr-[5%] mt-[20px] mb-[40px]">
           {description}
